@@ -2,33 +2,34 @@
 if(isset($_POST['town'])){
 
     # since we're not sending it to a DB purely for XSS we'll sanitize.
-	$town_name=htmlspecialchars($_POST['town']);	
+	$town_name=filter_input(INPUT_POST, 'town', FILTER_SANITIZE_SPECIAL_CHARS);
 	switch($_POST['vsize']){
-			case 1:
-					$size_type="Thorp ";
-					$t_size=0;
-					$houses=rand(80,100)/4;
-					break;
-			case 2:
-					$size_type="Village";
-					$t_size=0;
-					$houses=rand(100,200)/4;
-					break;
-			case 3:
-					$size_type="Town";
-					$t_size=1;
-					$houses=rand(200,300)/4;
-					break;
-			case 4:
-					$size_type="City";
-					$t_size=2;
-					$houses=rand(300,400)/5;
-					break;
-			case 5:
-					$size_type="Big City";
-					$t_size=3;
-					$houses=rand(400,100)/5;
-					break;
+		case 1:
+				$size_type="Thorp ";
+				$t_size=0;
+				$houses=rand(80,100)/4;
+				break;
+		case 2:
+				$size_type="Village";
+				$t_size=0;
+				$houses=rand(100,200)/4;
+				break;
+		case 3:
+				$size_type="Town";
+				$t_size=1;
+				$houses=rand(200,300)/4;
+				break;
+		case 4:
+				$size_type="City";
+				$t_size=2;
+				$houses=rand(300,400)/5;
+				break;
+		default:  # default to a massive city
+		case 5:
+				$size_type="Big City";
+				$t_size=3;
+				$houses=rand(400,100)/5;
+				break;
 	}
 	$building['tavern']=rand(0,$t_size);
 	$building['blacksmith']=rand(0,$t_size);
