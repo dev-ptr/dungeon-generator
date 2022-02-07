@@ -49,6 +49,7 @@ if(isset($_POST['town'])){
 	$building['pond_creek']=rand(0,$t_size);
 	$building['magic_shop']=rand(0,$t_size);
 	if($_POST['random_town'] != 1){
+			# TODO: add handling form fields for 'advanced'/ allow user to specify what buildings they want
 			if($_POST['tavern'] == 1){ $building['tavern']+=1;}else{$building['tavern']+=0;}
 			if($_POST['blacksmith'] == 1){ $building['blacksmith']+=1;}else{$building['blacksmith']+=0;}
 			if($_POST['woodworker'] == 1){ $building['woodworker']+=1;}else{$building['woodworker']+=0;}
