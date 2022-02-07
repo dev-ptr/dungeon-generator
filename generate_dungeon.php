@@ -1,7 +1,8 @@
 <?php
 if(isset($_POST['town'])){
 
-	$town_name=$_POST['town'];	
+    # since we're not sending it to a DB purely for XSS we'll sanitize.
+	$town_name=htmlspecialchars($_POST['town']);	
 	switch($_POST['vsize']){
 			case 1:
 					$size_type="Thorp ";
