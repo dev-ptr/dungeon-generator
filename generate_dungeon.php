@@ -67,24 +67,6 @@ if(isset($_POST['town'])){
 			if($_POST['gallows'] == 1){ $building['gallows']+=1;}else{$building['gallows']+=0;}
 			if($_POST['pond_creek'] == 1){ $building['pond_creek']+=1;}else{$building['pond_creek']+=0;}
 			if($_POST['magic_shop'] == 1){ $building['magic_shop']+=1;}else{$building['magic_shop']+=0;}
-	}else{
-		$building['tavern']+=rand(0,1);
-		$building['blacksmith']+=rand(0,1);
-		$building['woodworker']+=rand(0,1);
-		$building['cobbler']+=rand(0,1);
-		$building['general_trade']+=rand(0,1);
-		$building['market']+=rand(0,1);
-		$building['church']+=rand(0,1);
-		$building['cemetary']+=rand(0,1);
-		$building['farm']+=rand(0,1);
-		$building['tailor']+=rand(0,1);
-		$building['orchard']+=rand(0,1);
-		$building['mine']+=rand(0,1);
-		$building['mill']+=rand(0,1);
-		$building['town_hall']+=rand(0,1);
-		$building['gallows']+=rand(0,1);
-		$building['pond_creek']+=rand(0,1);
-		$building['magic_shop']+=rand(0,1);
 	}
 	$building_count=$tavern+$blacksmith+$woodworker+$cobbler+$general_trade+$market+$church+$cemetary+$farm+$tailor+$orchard+$mine+$mill+$town_hall+$gallows+$pond_creek+$magic_shop+$houses;
 	$map=array();
